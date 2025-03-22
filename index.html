@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sankey Diagram Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="sankey-section">
+                <h1 id="chart-title">Example Inc FY24 Income Statement</h1>
+                <div id="sankey-container"></div>
+                <div class="footer-text">
+                    <p>created with SankeyArt.com</p>
+                    <p class="instruction">Click on any element to edit it</p>
+                    <p class="balance-status">ALL NODES ARE BALANCED</p>
+                </div>
+            </div>
+            <div class="data-editor">
+                <h2>Data editor</h2>
+                <table id="data-table">
+                    <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Amount, current ($M)</th>
+                            <th>Amount, comparison ($M)</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Initial data based on the example -->
+                        <tr>
+                            <td><input type="text" class="from" value="Product A"></td>
+                            <td><input type="text" class="to" value="Revenue"></td>
+                            <td><input type="number" class="amount-current" value="35"></td>
+                            <td><input type="number" class="amount-comparison" value="30"></td>
+                            <td><button class="remove-row">×</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="from" value="Product B"></td>
+                            <td><input type="text" class="to" value="Revenue"></td>
+                            <td><input type="number" class="amount-current" value="10"></td>
+                            <td><input type="number" class="amount-comparison" value="11"></td>
+                            <td><button class="remove-row">×</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="from" value="Product C"></td>
+                            <td><input type="text" class="to" value="Revenue"></td>
+                            <td><input type="number" class="amount-current" value="5"></td>
+                            <td><input type="number" class="amount-comparison" value="4"></td>
+                            <td><button class="remove-row">×</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="from" value="Revenue"></td>
+                            <td><input type="text" class="to" value="Gross profit"></td>
+                            <td><input type="number" class="amount-current" value="30"></td>
+                            <td><input type="number" class="amount-comparison" value="26"></td>
+                            <td><button class="remove-row">×</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="from" value="Revenue"></td>
+                            <td><input type="text" class="to" value="Cost of revenue"></td>
+                            <td><input type="number" class="amount-current" value="20"></td>
+                            <td><input type="number" class="amount-comparison" value="19"></td>
+                            <td><button class="remove-row">×</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="from" value="Gross profit"></td>
+                            <td><input type="text" class="to" value="Operating profit"></td>
+                            <td><input type="number" class="amount-current" value="15"></td>
+                            <td><input type="number" class="amount-comparison" value="12"></td>
+                            <td><button class="remove-row">×</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="from" value="Gross profit"></td>
+                            <td><input type="text" class="to" value="Operating expenses"></td>
+                            <td><input type="number" class="amount-current" value="15"></td>
+                            <td><input type="number" class="amount-comparison" value="14"></td>
+                            <td><button class="remove-row">×</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="from" value="Operating profit"></td>
+                            <td><input type="text" class="to" value="Net profit"></td>
+                            <td><input type="number" class="amount-current" value="10"></td>
+                            <td><input type="number" class="amount-comparison" value="8"></td>
+                            <td><button class="remove-row">×</button></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="from" value="Operating profit"></td>
+                            <td><input type="text" class="to" value="Tax"></td>
+                            <td><input type="number" class="amount-current" value="5"></td>
+                            <td><input type="number" class="amount-comparison" value="4"></td>
+                            <td><button class="remove-row">×</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="table-footer">
+                    <button id="add-row">Add</button>
+                    <input type="number" id="add-rows-count" value="1" min="1">
+                    <span>rows</span>
+                </div>
+                <div class="data-source">
+                    <h3>Data source notes</h3>
+                    <textarea placeholder="Add notes here..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
