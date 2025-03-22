@@ -69,7 +69,7 @@ function updateSankey() {
             nodeData[from].yoy = yoy;
             nodeData[to].yoy = yoy;
 
-            rows.push([from, to, amountCurrent, `${from} to ${to}: $${amountCurrent}M`]);
+            rows.push([from, to, amountCurrent, `${from} to ${to}: ฿${amountCurrent}M`]);
             linkData.push({ from, to, amount: amountCurrent });
         }
     });
@@ -103,7 +103,7 @@ function updateSankey() {
                     formatter: (value) => {
                         const node = nodeData[value];
                         if (node) {
-                            return `${value}\n$${node.amount}M\n${node.yoy}% Y/Y`;
+                            return `${value}\n฿${node.amount}M\n${node.yoy}% Y/Y`;
                         }
                         return value;
                     }
@@ -119,7 +119,7 @@ function updateSankey() {
                 fillOpacity: 0.4
             }
         },
-        title: document.getElementById('chart-title').textContent,
+        title: document.getElementById('chart-title').value,
         titleTextStyle: {
             fontName: 'Arial',
             fontSize: 24,
@@ -150,7 +150,7 @@ function updateSankey() {
                 text.setAttribute('class', 'link-label');
                 text.setAttribute('text-anchor', 'middle');
                 text.setAttribute('dy', '-5');
-                text.textContent = `$${amount}M`;
+                text.textContent = `฿${amount}M`;
                 svg.appendChild(text);
             }
         });
