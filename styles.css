@@ -32,11 +32,16 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
-h1 {
+#chart-title {
+    width: 100%;
+    padding: 8px;
     font-size: 24px;
     font-weight: 400;
     color: #2c3e50;
-    margin: 0 0 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -150,20 +155,6 @@ button:hover {
 
 .footer-text p {
     margin: 5px 0;
-}
-
-.instruction {
-    background: #e6f0fa;
-    padding: 5px 10px;
-    border-radius: 4px;
-    display: inline-block;
-}
-
-.balance-status {
-    background: #e6f0fa;
-    padding: 5px 10px;
-    border-radius: 4px;
-    display: inline-block;
 }
 
 .link-label {
